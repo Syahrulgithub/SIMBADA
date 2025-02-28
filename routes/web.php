@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\BarangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,11 +36,13 @@ Route::middleware([
         return view('user');
     })->name('user');
 
-    Route::get('/barang/edit/{id}',[AdminController::class,'edit'] ) ->name('barang.edit');
+    Route::get('/barang/edit/{id}',[BarangController::class,'edit'] ) ->name('barang.edit');
+    Route::post('/barang/update/{id}',[BarangController::class,'update'] ) ->name('barang.update');
 
-    Route::get('/barang/tambah/{id}',[AdminController::class,'update'] ) ->name('barang.update');
+    Route::get('/barang/tambah',[BarangController::class,'create'] ) ->name('barang.tambah');
+    Route::post('/barang/store',[BarangController::class,'store'] ) ->name('barang.store');
+    Route::delete('/barang/{id}', [BarangController::class, 'destroy'])->name('barang.destroy');
 
-    Route::get('/barang/tambah/{id}',[AdminController::class,'create'] ) ->name('barang.tambah');
 
 
 

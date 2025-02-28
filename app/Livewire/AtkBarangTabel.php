@@ -8,9 +8,11 @@ use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Filters\SelectFilter;
 use App\Models\Barang;
 
+
 class AtkBarangTabel extends DataTableComponent
 {
     protected $model = Barang::class;
+    protected $listeners = ['barangUpdated' => '$refresh']; // Tangkap event agar tabel di-refresh
 
     public function configure(): void
     {
@@ -41,7 +43,7 @@ class AtkBarangTabel extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make('No', 'id')->sortable(),
+            Column::make('No', 'id'),
             Column::make('NUSP', 'nusp')->searchable()->sortable(),
             Column::make('Nama Barang', 'nama_barang')->searchable()->sortable(),
             Column::make('Jumlah', 'jumlah')->sortable(),
@@ -55,6 +57,11 @@ class AtkBarangTabel extends DataTableComponent
                         ]);
                     }
                 )
+                
         ];
     }
 }
+  
+
+
+

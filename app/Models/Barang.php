@@ -9,5 +9,5 @@ class Barang extends Model
 {
     use HasFactory;
     protected $table = 'barang'; // Pastikan sesuai dengan nama tabel
-    protected $fillable = ['nusp', 'nama_barang', 'jumlah', 'satuan', 'stok'];
+    protected $fillable = ['category_id','nusp', 'nama_barang', 'jumlah', 'satuan', 'stok'];  
 }

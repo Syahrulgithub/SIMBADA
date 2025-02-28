@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="mt-20 max-w-7xl mx-auto p-4">
+    <div class="max-w-7xl mx-auto mt-4 p-4 relative overflow-hidden">
         <!-- Header + Tombol Aksi -->
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-lg font-semibold">User</h2>

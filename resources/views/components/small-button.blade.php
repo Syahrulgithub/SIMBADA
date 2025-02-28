@@ -4,7 +4,7 @@
     {{ $attributes->merge([
         'type' => 'submit',
         'class' =>
-            'shadow-inner px-2 py-0.5 rounded-md text-[8pt] tracking-widest font-semibold h-fit transition-all duration-200',
+            'shadow-inner px-3 py-1.5 rounded-md w-full text-[8pt] tracking-widest font-medium h-fit transition-all duration-200',
         'disabled' => $disabled ? 'disabled' : null,
     ]) }}
     :class="{
@@ -19,3 +19,5 @@
     {{ $disabled ? 'disabled' : '' }}>
     {{ $slot }}
 </a>
+
+
