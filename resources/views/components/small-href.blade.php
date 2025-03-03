@@ -4,7 +4,7 @@
     {{ $attributes->merge([
         'type' => 'submit',
         'class' =>
-            'shadow-inner px-3 py-1.5 rounded-md w-full text-[8pt] tracking-widest font-medium h-fit transition-all duration-200',
+            'shadow-inner px-3 py-0.5 rounded-md w-full text-[8pt] tracking-widest font-medium h-fit transition-all duration-200 inline-flex items-center justify-center',
         'disabled' => $disabled ? 'disabled' : null,
     ]) }}
     :class="{
@@ -12,8 +12,6 @@
         === 'default',
         'bg-primary text-white hover:bg-gray-200 active:bg-primary': '{{ $variant }}'
         === 'success',
-        'bg-customRed text-white hover:bg-red-700 active:bg-customRed': '{{ $variant }}'
-        === 'danger',
         
     }"
     {{ $disabled ? 'disabled' : '' }}>

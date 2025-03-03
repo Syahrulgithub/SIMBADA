@@ -25,13 +25,13 @@
             </div>
 
             <!-- Konten -->
-            <div class="w-1/2 flex flex-col items-center justify-center text-center p-6">
+            <div class="w-1/2 flex flex-col items-center justify-center text-center p-8">
                 <h1 class="text-lg font-semibold">SELAMAT DATANG DI</h1>
-                <h2 class="text-2xl font-extrabold">SIMBADA</h2>
-                <p class="text-gray-600">Sistem Barang Dinas</p>
-                <p class="text-gray-700 mt-2">BKPSDM Kota Pekalongan</p>
+                <h2 class="text-4xl font-extrabold">S I M B A D A</h2>
+                <p class="text-gray-900">Sistem Barang Dinas</p>
+                <p class="text-gray-900 mt-2">BKPSDM Kota Pekalongan</p>
 
-                <a href="{{ route('login') }}" class="mt-4 bg-primary hover:bg-blue-600 text-white px-7 py-1 rounded-2xl drop-shadow-2xl text-sm font-bold transition duration-300">
+                <a href="{{ route('login') }}" class="mt-4 bg-primary hover:bg-blue-600 text-white px-7 py-1 rounded-xl drop-shadow-2xl transition-colors text-sm font-bold transition duration-300">
                     Mulai
                 </a>
             </div>

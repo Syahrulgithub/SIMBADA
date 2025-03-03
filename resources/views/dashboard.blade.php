@@ -4,13 +4,13 @@
     <div class="w-full h-48 sm:h-72 relative">
         <div class="flex w-full h-full transition-transform duration-700 ease-in-out" id="slider">
             <div class="w-full flex-shrink-0">
-                <img src={{ asset ("/img/Slider.jpeg")}} class="w-full h-48 sm:h-72 object-cover" alt="Slide 1">
+                <img src={{ asset ("/img/Slider.jpeg")}} class="w-full h-48 sm:h-72 object-cover rounded-md" alt="Slide 1">
             </div>
             <div class="w-full flex-shrink-0">
-                <img src={{ asset ("/img/Slider.jpeg")}} class="w-full h-48 sm:h-72 object-cover" alt="Slide 2">
+                <img src={{ asset ("/img/Slider.jpeg")}} class="w-full h-48 sm:h-72 object-cover rounded-md" alt="Slide 2">
             </div>
             <div class="w-full flex-shrink-0">
-                <img src={{ asset ("/img/Slider.jpeg")}} class="w-full h-48 sm:h-72 object-cover" alt="Slide 3">
+                <img src={{ asset ("/img/Slider.jpeg")}} class="w-full h-48 sm:h-72 object-cover rounded-md" alt="Slide 3">
             </div>
         </div>
     </div>
@@ -29,41 +29,60 @@
 
 <script>
     let index = 0;
-    const slider = document.getElementById("slider");
-    const totalSlides = slider.children.length;
-    const bars = document.querySelectorAll(".bar");
+const slider = document.getElementById("slider");
+const totalSlides = slider.children.length;
+const bars = document.querySelectorAll(".bar");
 
-    function showSlide() {
-        slider.style.transform = `translateX(-${index * 100}%)`;
-        updateBars();
+function showSlide(immediate = false) {
+    slider.style.transition = immediate ? "none" : "transform 0.5s ease-in-out";
+    slider.style.transform = `translateX(-${index * 100}%)`;
+    updateBars();
+}
+
+function nextSlide() {
+    if (index < totalSlides - 1) {
+        index++;
+        showSlide();
+    } else {
+        // Animasi slide ke terakhir
+        index++;
+        showSlide();
+        
+        // Setelah animasi selesai, lompat langsung ke awal tanpa animasi
+        setTimeout(() => {
+            index = 0;
+            showSlide(true);
+        }, 500);
     }
+}
 
-    function prevSlide() {
-        index = (index > 0) ? index - 1 : totalSlides - 1;
+function prevSlide() {
+    if (index > 0) {
+        index--;
+        showSlide();
+    } else {
+        // Lompat langsung ke akhir tanpa animasi
+        index = totalSlides - 1;
         showSlide();
     }
+}
 
-    function nextSlide() {
-        index = (index < totalSlides - 1) ? index + 1 : 0;
-        showSlide();
-    }
+function currentSlide(n) {
+    index = n;
+    showSlide();
+}
 
-    function currentSlide(n) {
-        index = n;
-        showSlide();
-    }
-
-    function updateBars() {
-        bars.forEach((bar, i) => {
-            bar.classList.toggle("bg-blue-500", i === index);
-            bar.classList.toggle("bg-gray-400", i !== index);
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        showSlide();
-        setInterval(nextSlide, 5000); 
+function updateBars() {
+    bars.forEach((bar, i) => {
+        bar.classList.toggle("bg-blue-500", i === index);
+        bar.classList.toggle("bg-gray-400", i !== index);
     });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    showSlide();
+    setInterval(nextSlide, 5000);
+});
 </script>
 </div>
 
