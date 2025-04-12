@@ -31,7 +31,7 @@
                 <p class="text-gray-900">Sistem Barang Dinas</p>
                 <p class="text-gray-900 mt-2">BKPSDM Kota Pekalongan</p>
 
-                <a href="{{ route('login') }}" class="mt-4 bg-primary hover:bg-blue-600 text-white px-7 py-1 rounded-xl drop-shadow-2xl transition-colors text-sm font-bold transition duration-300">
+                <a href="{{ route('login') }}" class="mt-4 bg-primary hover:bg-blue-600 text-white px-7 py-1 rounded-xl ring-2 ring-primary focus:outline-none drop-shadow-2xl transition-colors text-sm font-bold transition duration-300">
                     Mulai
                 </a>
             </div>

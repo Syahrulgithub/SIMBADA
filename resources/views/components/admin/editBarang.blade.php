@@ -10,7 +10,7 @@
     @endif
 
     <form action="{{ route('barang.update', ['id'=>$barang->id]) }}" method="post">
-        @csrf
+        @csrf 
         <div class="mb-4">
             <label for="nusp" class="block">NUSP</label>
             <input type="text" id="nusp" value="{{ $barang->nusp }}" class="border rounded w-full" name="nusp" required>
@@ -40,7 +40,7 @@
             <input type="number" id="stok" value="{{ $barang->stok }}" class="border rounded w-full" name="stok" required>
             @error('nama_barang') <span class="text-customRed">{{ $message }}</span> @enderror
         </div>
-        <x-button variant="success">update</x-button>
+        <x-button variant="green">update</x-button>
     </form>
    
 </div>

@@ -11,7 +11,9 @@
         @endif
             </div>
             <div class="flex space-x-2 -mt-5">
+                @if(Auth::user() && Auth::user()->role === 'admin')
                 <x-button-href href="{{ route('barang.tambah') }}" variant="success">Tambah</x-button-href>
+                @endif
             </div>
             
         </div> 

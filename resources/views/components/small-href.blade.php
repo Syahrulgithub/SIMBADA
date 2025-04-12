@@ -10,8 +10,10 @@
     :class="{
        'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800': '{{ $variant }}'
         === 'default',
-        'bg-primary text-white hover:bg-gray-200 active:bg-primary': '{{ $variant }}'
+        'bg-primary text-white hover:bg-blue-300 active:bg-primary': '{{ $variant }}'
         === 'success',
+        'bg-customGreen text-white hover:bg-green-800 active:bg-customGreen': '{{ $variant }}'
+        === 'green'
         
     }"
     {{ $disabled ? 'disabled' : '' }}>

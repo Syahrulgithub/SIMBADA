@@ -3,7 +3,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <div class="shrink-0 flex items-center">
-                    <img src="/img/kota pekalongan.png" class="h-10 w-8">
+                    <img src="/img/kota pekalongan.webp" class="h-10 w-10">
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" class="text-white">
@@ -12,13 +12,15 @@
                     <x-nav-link href="{{ route('manajemen') }}" class="text-white">
                         {{ __('Manajemen Barang') }}
                     </x-nav-link>
+                    @if(Auth::user() && Auth::user()->role === 'admin')
                     <x-nav-link href="{{ route('user') }}" class="text-white">
                         {{ __('User') }}
                     </x-nav-link>
                     <x-nav-link href="#" class="text-white">
                         {{ __('Statistik') }}
                     </x-nav-link>
-                    <x-nav-link href="#" class="text-white">
+                    @endif
+                    <x-nav-link href="{{ route('permintaan') }}" class="text-white">
                         {{ __('permintaan') }}
                     </x-nav-link>
                 </div>

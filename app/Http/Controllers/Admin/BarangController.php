@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Barang;
@@ -10,6 +11,7 @@ use App\Models\Category;
 class BarangController extends Controller{
     // menampilkan halaman tambah barang
     public function create (){
+        if(Auth::user() && Auth::user()->role !== 'admin'){abort(404);};
         $category = Category::all();
         return view("components.admin.buatBarang", compact('category'));
     }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BarangController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,7 @@ Route::middleware([
     Route::get('/user', function () {
         return view('user');
     })->name('user');
+       Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
     Route::get('/barang/edit/{id}',[BarangController::class,'edit'] ) ->name('barang.edit');
     Route::post('/barang/update/{id}',[BarangController::class,'update'] ) ->name('barang.update');
@@ -42,6 +44,10 @@ Route::middleware([
     Route::get('/barang/tambah',[BarangController::class,'create'] ) ->name('barang.tambah');
     Route::post('/barang/store',[BarangController::class,'store'] ) ->name('barang.store');
     Route::delete('/barang/{id}', [BarangController::class, 'destroy'])->name('barang.destroy');
+
+    Route::get('/permintaanuser', function(){
+        return view('livewire.permintaan-tabel-user');    
+    })->name('permintaan');
 
 
 
