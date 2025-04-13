@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Permintaan extends Model
 {
     use HasFactory;
+    protected $table = 'permintaan'; // default, bisa dihapus kalau nama tabel sesuai
 
     protected $fillable = [
         'user_id',

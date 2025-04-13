@@ -46,7 +46,7 @@ Route::middleware([
     Route::delete('/barang/{id}', [BarangController::class, 'destroy'])->name('barang.destroy');
 
     Route::get('/permintaanuser', function(){
-        return view('livewire.permintaan-tabel-user');    
+        return view('manajemen-permintaan');    
     })->name('permintaan');
 
 
