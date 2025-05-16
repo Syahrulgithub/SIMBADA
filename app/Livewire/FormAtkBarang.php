@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Barang;
 use App\Models\Category;
 
-class AtkBarang extends Component
+class FormAtkBarang extends Component
 {
     public $nusp, $nama_barang, $jumlah, $satuan, $stok, $category_id;
     public $showForm = false;
@@ -23,7 +23,7 @@ class AtkBarang extends Component
     {
         if(Auth::user() && Auth::user()->role !== 'admin'){abort(404);};
         $category = Category::all();
-        return view("livewire.atk-barang", compact('category'));
+        return view("livewire.form-atkbarang", compact('category'));
     }
         public function toggleForm()
 {

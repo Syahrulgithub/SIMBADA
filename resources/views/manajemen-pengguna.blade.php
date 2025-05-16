@@ -4,7 +4,7 @@
         <!-- Formulir Tambah User -->
         <livewire:form-pengguna />
 
-        <livewire:Pengguna/>
+        <livewire:Penggunatabel/>
         <div id="deleteModal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
     <div class="bg-white p-6 rounded-lg shadow-lg w-96">
         <h2 class="text-lg font-bold mb-4">Konfirmasi Hapus</h2>

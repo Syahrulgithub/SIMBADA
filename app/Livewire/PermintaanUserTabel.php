@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 
-class TabelPermintaanUser extends DataTableComponent
+class PermintaanUserTabel extends DataTableComponent
 {
     protected $model = Permintaan::class;
 

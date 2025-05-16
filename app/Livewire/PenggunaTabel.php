@@ -8,7 +8,7 @@ use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\User;
 
-class Pengguna extends DataTableComponent
+class PenggunaTabel extends DataTableComponent
 {
     public function mount()
 {
@@ -17,6 +17,7 @@ class Pengguna extends DataTableComponent
     }
 }
     protected $model = User::class;
+    protected $listeners = ['userUpdated' => '$refresh'];
 
     public function configure(): void
     {

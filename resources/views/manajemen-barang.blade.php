@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="max-w-7xl mx-auto mt-4 p-4 relative overflow-hidden">
         <!-- Header + Dropdown + Tombol Aksi -->
-            <livewire:atk-barang />
+            <livewire:formatkbarang />
             
             <livewire:AtkBarangTabel/>
         </div>
