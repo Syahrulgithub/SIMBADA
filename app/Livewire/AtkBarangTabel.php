@@ -47,7 +47,10 @@ class AtkBarangTabel extends DataTableComponent
     {
         $columns = [
         // Kolom ID tetap ada
-        Column::make('ID', 'id')->sortable(),
+        Column::make('ID', 'id')->sortable()->hideIf(true),
+        Column::make('No')
+                ->label(fn($row) => $this->getRowNumber($row))
+                ->excludeFromColumnSelect(),
 
         Column::make('NUSP', 'nusp')->searchable()->sortable(),
         Column::make('Nama Barang', 'nama_barang')->searchable()->sortable(),
@@ -67,4 +70,11 @@ class AtkBarangTabel extends DataTableComponent
 
     return $columns;
     }
+public function getRowNumber($row): int
+{
+    $rows = $this->getRows()->values(); // pastikan index numerik
+    $index = $rows->search(fn($item) => $item->id === $row->id); // cari berdasarkan ID
+
+    return ($this->getPage() - 1) * $this->getPerPage() + $index + 1;
+}
 }

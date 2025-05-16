@@ -1,22 +1,8 @@
 <x-app-layout>
     <div class="max-w-7xl mx-auto mt-4 p-4 relative overflow-hidden">
         <!-- Header + Dropdown + Tombol Aksi -->
-        <div class="flex justify-between items-center mb-4">
-            <div class="flex flex-col">
-                <h2 class="text-lg font-semibold">Manajemen Barang</h2>
-                @if (session()->has('message'))
-            <div class="bg-green-500 text-white p-2 rounded">
-                {{ session('message') }}
-            </div>
-        @endif
-            </div>
-            <div class="flex space-x-2 -mt-5">
-                @if(Auth::user() && Auth::user()->role === 'admin')
-                <x-button-href href="{{ route('barang.tambah') }}" variant="success">Tambah</x-button-href>
-                @endif
-            </div>
+            <livewire:atk-barang />
             
-        </div> 
             <livewire:AtkBarangTabel/>
         </div>
     </div>
