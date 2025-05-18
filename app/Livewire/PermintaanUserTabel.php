@@ -9,7 +9,7 @@ use Rappasoft\LaravelLivewireTables\Views\Column;
 
 class PermintaanUserTabel extends DataTableComponent
 {
-    protected $model = Permintaan::class;
+    protected $model = Permintaan::class;   
 
     public function configure(): void
     {
